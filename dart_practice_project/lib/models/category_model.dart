@@ -1,9 +1,10 @@
 import 'package:dart_practice_project/models/product_model.dart';
 
 class CategoryModel {
-  String? categoryID;
+  String categoryID ='';
   ProductModel? product;
-  String? name;
+  String name = '';
 
   CategoryModel();
+  CategoryModel.parameterized(this.categoryID, this.product, this.name);
 }

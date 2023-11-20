@@ -8,4 +8,5 @@ class ProductModel {
   String? size;
 
   ProductModel();
+  
 }
