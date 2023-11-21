@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dart_practice_project/models/product_model.dart';
 
 class ProductManager {
