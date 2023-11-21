@@ -1,15 +1,19 @@
 import 'package:dart_practice_project/utils/validator.dart';
 
-class UserModel {
-  String userID = '';
-  String name = '';
-  String email = '';
-  String address = '';
-  String password = '';
+class User {
+  String userID;
+  String name;
+  String? email;
+  String address;
+  String password;
 
-  UserModel();
-  UserModel.parameter(
-      this.userID, this.name, this.email, this.address, this.password);
+  User({
+    this.userID = '',
+    this.name = '',
+    this.email,
+    this.address = '',
+    this.password = '',
+  });
 
   @override
   String toString() {
@@ -22,7 +26,7 @@ class UserModel {
     bool isEmail;
     do {
       email = Validator.getString('Enter email: ');
-      isEmail = Validator.emailIsValid(email);
+      isEmail = Validator.emailIsValid(email ?? '');
       if (!isEmail) {
         print('Error , Please enter email.');
       }

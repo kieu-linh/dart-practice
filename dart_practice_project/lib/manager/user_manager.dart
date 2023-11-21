@@ -1,20 +1,20 @@
 
-import 'package:dart_practice_project/models/user_model.dart';
+import 'package:dart_practice_project/models/user.dart';
 
 class UserManager {
-  List<UserModel> _listUser = [];
+  List<User> _listUser = [];
 
   UserManager();
   UserManager.parameter(this._listUser);
 
   void addUser() {
-    UserModel userModel = UserModel();
+    User userModel = User();
     userModel.inputInformation();
     _listUser.add(userModel);
   }
 
   void showListUser() {
-    for (UserModel user in _listUser) {
+    for (User user in _listUser) {
       print(user.toString());
     }
   }

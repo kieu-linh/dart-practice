@@ -1,19 +1,19 @@
-import 'package:dart_practice_project/models/product_model.dart';
+import 'package:dart_practice_project/models/product.dart';
 
 class ProductManager {
-  List<ProductModel> _listProduct = [];
+  List<Product> _listProduct = [];
 
   ProductManager();
   ProductManager.parameter(this._listProduct);
 
   void addProduct() {
-    ProductModel productModel = ProductModel();
+    Product productModel = Product();
     productModel.inputInformation();
     _listProduct.add(productModel);
   }
 
   void showListProduct() {
-    for (ProductModel product in _listProduct) {
+    for (Product product in _listProduct) {
       print(product.toString());
     }
   }
