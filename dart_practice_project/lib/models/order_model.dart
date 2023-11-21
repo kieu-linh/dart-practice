@@ -5,5 +5,5 @@ class OrderModel {
   String status = '';
 
   OrderModel();
-  OrderModel.parameterized(this.product, this.status);
+  OrderModel.parameter(this.product, this.status);
 }

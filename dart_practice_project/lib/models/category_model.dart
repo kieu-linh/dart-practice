@@ -6,5 +6,5 @@ class CategoryModel {
   String name = '';
 
   CategoryModel();
-  CategoryModel.parameterized(this.categoryID, this.product, this.name);
+  CategoryModel.parameter(this.categoryID, this.product, this.name);
 }

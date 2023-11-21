@@ -5,5 +5,5 @@ class CartModel {
   UserModel? userModel;
 
   CartModel();
-  CartModel.parameterized(this.cartID, this.userModel);
+  CartModel.parameter(this.cartID, this.userModel);
 }

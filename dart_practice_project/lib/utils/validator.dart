@@ -1,7 +1,7 @@
 import 'dart:io';
 
 class Validator {
-  String getString(String prompt) {
+  static String getString(String prompt) {
     String value;
     do {
       stdout.write(prompt);
@@ -10,7 +10,7 @@ class Validator {
     return value;
   }
 
-  int getInt(String prompt) {
+  static int getInt(String prompt) {
     int value = 0;
     bool isValid = false;
     do {
@@ -25,7 +25,7 @@ class Validator {
     return value;
   }
 
-  double getDouble(String prompt) {
+  static double getDouble(String prompt) {
     double value = 0.0;
     bool isValid = false;
     do {
