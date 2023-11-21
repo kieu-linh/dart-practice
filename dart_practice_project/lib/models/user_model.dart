@@ -1,6 +1,6 @@
 import 'package:dart_practice_project/utils/validator.dart';
 
- class UserModel {
+class UserModel {
   String userID = '';
   String name = '';
   String email = '';
@@ -22,7 +22,7 @@ import 'package:dart_practice_project/utils/validator.dart';
     bool isEmail;
     do {
       email = Validator.getString('Enter email: ');
-      isEmail = Validator.emailIsValid(email ?? '');
+      isEmail = Validator.emailIsValid(email);
       if (!isEmail) {
         print('Error , Please enter email.');
       }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dart_practice_project/models/user_model.dart';
 
 class UserManager {
@@ -10,5 +12,11 @@ class UserManager {
     UserModel userModel = UserModel();
     userModel.inputInformation();
     _listUser.add(userModel);
+  }
+
+  void showListUser() {
+    for (UserModel user in _listUser) {
+      print(user.toString());
+    }
   }
 }
