@@ -14,6 +14,25 @@ class User {
     this.address = '',
     this.password = '',
   });
+  // factory constructor (named constructor) convert json to object
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      userID: json['userID'] as String,
+      name: json['name'] as String,
+      email: json['email'] as String,
+      address: json['address'] as String,
+      password: json['password'] as String,
+    );
+  }
+  Map<String, dynamic> toJson() {
+    return {
+      'userID': userID,
+      'name': name,
+      'email': email,
+      'address': address,
+      'password': password,
+    };
+  }
 
   @override
   String toString() {

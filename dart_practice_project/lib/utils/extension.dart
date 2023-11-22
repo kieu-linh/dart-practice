@@ -1,3 +1,4 @@
+//extension for app: format price product to VND: 1000000 -> 1.000.000 vnd
 extension ExDouble on double {
   String toVnd() {
     String st = '${toInt()}';

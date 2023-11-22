@@ -12,10 +12,10 @@ void main() {
     MenuUtil.printMenu();
     do {
       i = Validator.getInt('Choice: ');
-      if (i < 1 || i > 5) {
+      if (i < 1 || i > 6) {
         print('Error, Please enter again.');
       }
-    } while (i < 1 || i > 5);
+    } while (i < 1 || i > 6);
     switch (i) {
       case 1:
         userManager.addUser();
@@ -29,9 +29,14 @@ void main() {
       case 4:
         productManager.showListProduct();
         break;
+
       case 5:
+        productManager
+            .deleteProduct(Validator.getString('Enter product ID to delete: '));
+        break;
+      case 6:
         print('Exit');
         break;
     }
-  } while (i != 5);
+  } while (i != 6);
 }

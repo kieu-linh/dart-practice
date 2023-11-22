@@ -1,4 +1,3 @@
-
 import 'package:dart_practice_project/models/user.dart';
 
 class UserManager {
@@ -12,7 +11,6 @@ class UserManager {
     userModel.inputInformation();
     _listUser.add(userModel);
   }
-
   void showListUser() {
     for (User user in _listUser) {
       print(user.toString());
