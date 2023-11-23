@@ -6,10 +6,12 @@ import 'package:dart_practice_project/models/product.dart';
 import 'package:dart_practice_project/utils/menu.dart';
 import 'package:dart_practice_project/utils/validator.dart';
 
-void main() async{
+void main() async {
   UserManager userManager = UserManager();
   ProductManager productManager = ProductManager();
   CategoryManager categoryManager = CategoryManager();
+
+  await productManager.getProductData();
 
   int i;
   do {
@@ -43,5 +45,5 @@ void main() async{
         print('Exit');
         break;
     }
-  } while (i != 5);
+  } while (i != 7);
 }

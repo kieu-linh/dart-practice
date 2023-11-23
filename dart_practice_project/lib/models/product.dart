@@ -14,6 +14,7 @@ class Product {
   double price;
   double? rating;
   String? categoryID;
+  String categoryName;
 
 // Class has a constructor take values for properties as required parameter
   Product({
@@ -24,6 +25,7 @@ class Product {
     this.price = 0.0,
     this.rating,
     this.categoryID,
+    this.categoryName = '',
   });
   // Getter and setter for properties
   String getProductID() => productID;
@@ -44,6 +46,19 @@ class Product {
   @override
   String toString() {
     return 'ProductModel{productID: $productID, name: $name, description: $description, imageURL: $imageURL, price: ${(price).toVnd()}, rating: $rating}';
+  }
+
+  //factory constructor (named constructor) convert json to object
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
+      productID: '${json['id']}',
+      name: json['title'],
+      description: json['description'],
+      imageURL: json['thumbnail'],
+      price: double.parse(json['price'].toString()),
+      rating: json['rating'] as double?,
+      categoryName: json['category'],
+    );
   }
 
   //function inputInformation() to input information for product
