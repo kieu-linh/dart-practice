@@ -1,15 +1,12 @@
-import 'package:dart_practice_project/models/product.dart';
 import 'package:dart_practice_project/utils/check_id.dart';
 import 'package:dart_practice_project/utils/validator.dart';
 
 class Category {
   String categoryID;
-  Product? product;
   String name;
 
   Category({
-    required this.categoryID,
-    this.product,
+    this.categoryID = '',
     this.name = '',
   });
 

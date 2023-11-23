@@ -9,7 +9,7 @@ class ProductManager implements Manageable<Product> {
   ProductManager();
   ProductManager.parameter(this._listProduct);
 
-  //User async/await to add product to list.
+  //Use async/await to add product to list.
   @override
   Future<void> add(Product product) async {
     try {
@@ -22,6 +22,7 @@ class ProductManager implements Manageable<Product> {
     }
   }
 
+  //function showList() should print the list product.
   @override
   void showList() {
     print('Product List: ');
