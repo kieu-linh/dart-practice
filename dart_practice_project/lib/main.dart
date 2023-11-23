@@ -1,4 +1,4 @@
-import 'package:dart_practice_project/manager/product_manager.dart';
+import 'package:dart_practice_project/manager/product.dart';
 import 'package:dart_practice_project/manager/user_manager.dart';
 import 'package:dart_practice_project/utils/menu.dart';
 import 'package:dart_practice_project/utils/validator.dart';
@@ -12,10 +12,10 @@ void main() {
     MenuUtil.printMenu();
     do {
       i = Validator.getInt('Choice: ');
-      if (i < 1 || i > 6) {
+      if (i < 1 || i > 5) {
         print('Error, Please enter again.');
       }
-    } while (i < 1 || i > 6);
+    } while (i < 1 || i > 5);
     switch (i) {
       case 1:
         userManager.addUser();
@@ -29,14 +29,9 @@ void main() {
       case 4:
         productManager.showListProduct();
         break;
-
       case 5:
-        productManager
-            .deleteProduct(Validator.getString('Enter product ID to delete: '));
-        break;
-      case 6:
         print('Exit');
         break;
     }
-  } while (i != 6);
+  } while (i != 5);
 }
