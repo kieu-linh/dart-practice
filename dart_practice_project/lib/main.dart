@@ -1,5 +1,6 @@
 import 'package:dart_practice_project/manager/product.dart';
 import 'package:dart_practice_project/manager/user_manager.dart';
+import 'package:dart_practice_project/models/product.dart';
 import 'package:dart_practice_project/utils/menu.dart';
 import 'package:dart_practice_project/utils/validator.dart';
 
@@ -24,10 +25,10 @@ void main() {
         userManager.showListUser();
         break;
       case 3:
-        productManager.addProduct();
+        productManager.add(Product());
         break;
       case 4:
-        productManager.showListProduct();
+        productManager.showList();
         break;
       case 5:
         print('Exit');
