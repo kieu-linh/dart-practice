@@ -22,9 +22,9 @@ class CategoryManager implements Manageable<Category> {
   //function showList() should print the list category.
   @override
   void showList() {
-    print('Category List: ');
+    print('.....Category List: .....');
     for (Category category in categories) {
-      print(category.toString());
+      print(category.name);
     }
   }
 }

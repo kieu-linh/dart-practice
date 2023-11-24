@@ -2,6 +2,8 @@ import 'package:dart_practice_project/models/category.dart';
 import 'package:dart_practice_project/models/product.dart';
 import 'package:dart_practice_project/utils/validator.dart';
 
+// Create class Check with static method checkID() and checkIDCategory().
+// checkID() will check if the id is exist in the list product or not.
 class Check {
   static String checkID(List<Product> products) {
     bool isValid;
