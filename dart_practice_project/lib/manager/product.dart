@@ -1,6 +1,7 @@
 // Create class ProductManager that implements Manageable with generic type Product.
 
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dart_practice_project/manager/manageable.dart';
 import 'package:dart_practice_project/models/product.dart';
@@ -11,28 +12,6 @@ class ProductManager implements Manageable<Product> {
 
   ProductManager();
   ProductManager.parameter(this._listProduct);
-
-  //Use async/await to add product to list.
-  @override
-  Future<void> add(Product product) async {
-    try {
-      product.inputInformation(_listProduct);
-      _listProduct.add(product);
-      await Future.delayed(Duration(milliseconds: 2000));
-      print('Add product success!');
-    } catch (e) {
-      print('Error adding product: $e');
-    }
-  }
-
-  //function showList() should print the list product.
-  @override
-  void showList() {
-    print('Product List: ');
-    for (Product product in _listProduct) {
-      print(product.toString());
-    }
-  }
 
   //Create a function getProductData get data from https://dummyjson.com/products
   // add 5 products from the data to the list product.
@@ -50,4 +29,46 @@ class ProductManager implements Manageable<Product> {
       throw Exception('Failed to load data');
     }
   }
+
+  //Use async/await to add product to list.
+  @override
+  Future<void> add(Product product) async {
+    try {
+      product.inputInformation(_listProduct);
+      _listProduct.add(product);
+      await Future.delayed(Duration(milliseconds: 2000));
+      print('Add product success!');
+    } catch (e) {
+      print('Error adding product: $e');
+    }
+  }
+  void sortProductByPrice() {
+    _listProduct.sort((a, b) => a.price.compareTo(b.price));
+    print('...List product sort by price: ...');
+    for (Product product in _listProduct) {
+      stdout.write(product.toString());
+    }
+  }
+
+  void deleteProduct(String productID) {
+    print('Enter product ID to delete: ');
+    String productID = stdin.readLineSync()!;
+    for (Product product in _listProduct) {
+      if (product.productID == productID) {
+        _listProduct.remove(product);
+        break;
+      }
+    }
+  }
+
+  //function showList() should print the list product.
+  @override
+  void showList() {
+    print('Product List: ');
+    for (Product product in _listProduct) {
+      print(product.toString());
+    }
+  }
+
+  
 }

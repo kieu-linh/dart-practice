@@ -10,6 +10,7 @@ void main() async {
   UserManager userManager = UserManager();
   ProductManager productManager = ProductManager();
   CategoryManager categoryManager = CategoryManager();
+  Product product = Product();
 
   await productManager.getProductData();
 
@@ -18,10 +19,10 @@ void main() async {
     MenuUtil.printMenu();
     do {
       i = Validator.getInt('Choice: ');
-      if (i < 1 || i > 7) {
+      if (i < 1 || i > 9) {
         print('Error, Please enter again.');
       }
-    } while (i < 1 || i > 7);
+    } while (i < 1 || i > 9);
     switch (i) {
       case 1:
         userManager.addUser();
@@ -42,8 +43,14 @@ void main() async {
         productManager.showList();
         break;
       case 7:
+        productManager.sortProductByPrice();
+        break;
+      case 8:
+        productManager.deleteProduct(product.productID);
+        break;
+      case 9:
         print('Exit');
         break;
     }
-  } while (i != 7);
+  } while (i != 9);
 }
