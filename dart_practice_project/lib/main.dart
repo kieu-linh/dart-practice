@@ -1,6 +1,6 @@
-import 'package:dart_practice_project/manager/category.dart';
-import 'package:dart_practice_project/manager/product.dart';
-import 'package:dart_practice_project/manager/user.dart';
+import 'package:dart_practice_project/manager/category_manager.dart';
+import 'package:dart_practice_project/manager/product_manager.dart';
+import 'package:dart_practice_project/manager/user_manager.dart';
 import 'package:dart_practice_project/models/category.dart';
 import 'package:dart_practice_project/models/product.dart';
 import 'package:dart_practice_project/utils/menu.dart';
@@ -11,18 +11,21 @@ void main() async {
   ProductManager productManager = ProductManager();
   CategoryManager categoryManager = CategoryManager();
   Product product = Product();
-
-  await productManager.getProductData();
+  try {
+    await productManager.getProductData();
+  } catch (e) {
+    print('Error: $e');
+  }
 
   int i;
   do {
     MenuUtil.printMenu();
     do {
       i = Validator.getInt('Choice: ');
-      if (i < 1 || i > 9) {
+      if (i < 1 || i > 10) {
         print('Error, Please enter again.');
       }
-    } while (i < 1 || i > 9);
+    } while (i < 1 || i > 10);
     switch (i) {
       case 1:
         userManager.addUser();
@@ -34,23 +37,26 @@ void main() async {
         await categoryManager.add(Category());
         break;
       case 4:
-        categoryManager.showList();
+        categoryManager.showList(categories);
         break;
       case 5:
         await productManager.add(Product());
         break;
       case 6:
-        productManager.showList();
+        productManager.showList(productManager.listProduct);
         break;
       case 7:
-        productManager.sortProductByPrice();
+        productManager.update(product.productID);
         break;
       case 8:
-        productManager.deleteProduct(product.productID);
+        productManager.sortProductByPrice();
         break;
       case 9:
+        productManager.delete(product.productID);
+        break;
+      case 10:
         print('Exit');
         break;
     }
-  } while (i != 9);
+  } while (i != 10);
 }
