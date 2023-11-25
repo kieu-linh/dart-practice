@@ -3,7 +3,7 @@
 import 'package:dart_practice_project/manager/manageable.dart';
 import 'package:dart_practice_project/models/category.dart';
 
-class CategoryManager implements Manageable<Category> {
+class CategoryManager extends Manageable<Category> {
   CategoryManager();
 
   //Use async/await to add category to list.
@@ -12,6 +12,7 @@ class CategoryManager implements Manageable<Category> {
     try {
       item.inputInformation(categories);
       categories.add(item);
+      print('Adding category...');
       await Future.delayed(Duration(milliseconds: 2000));
       print('Add category success!');
     } catch (e) {
@@ -21,10 +22,10 @@ class CategoryManager implements Manageable<Category> {
 
   //function showList() should print the list category.
   @override
-  void showList() {
-    print('.....Category List: .....');
-    for (Category category in categories) {
-      print(category.name);
-    }
+  void showList(List<Category> list) {
+    print('....Category List:....');
+    super.showList(list);
   }
+  
+
 }

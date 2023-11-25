@@ -69,19 +69,20 @@ class Product {
     imageURL = Validator.getString('Enter image URL: ');
     price = Validator.getDouble('Enter price: ');
     rating = Validator.getDouble('Enter rating: ');
-    bool status;
-    do {
-      status = false;
-      categoryID = Validator.getString('Enter category ID: ');
-      for (Category category in categories) {
-        if (category.categoryID == categoryID) {
-          status = true;
-        }
-      }
-      if (!status) {
-        print('Category ID is not exist, please enter again.');
-      }
-    } while (!status);
+    categoryID =
+        Check.checkIdDuplicateCategory(categories, 'Enter category ID: ');
+    categoryName = getNameCategory(categoryID ?? '');
+  }
+
+//
+  void updateInformation() {
+    name = Validator.getString('Enter new name: ');
+    description = Validator.getString('Enter new description: ');
+    imageURL = Validator.getString('Enter new image URL: ');
+    price = Validator.getDouble('Enter new price: ');
+    rating = Validator.getDouble('Enter new rating: ');
+    categoryID =
+        Check.checkIdDuplicateCategory(categories, 'Enter new category ID: ');
     categoryName = getNameCategory(categoryID ?? '');
   }
 }
