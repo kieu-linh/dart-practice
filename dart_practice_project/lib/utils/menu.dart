@@ -7,7 +7,7 @@ class MenuUtil {
     print('4. Show list category');
     print('5. Add product');
     print('6. Show list product');
-    print('7.Update product');
+    print('7. Update product');
     print('8. Sort product by price');
     print('9. Delete product');
     print('10. Exit');
