@@ -2,7 +2,6 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'dart:math';
 
 import 'package:dart_practice_project/manager/manageable.dart';
 import 'package:dart_practice_project/models/category.dart';
@@ -90,6 +89,7 @@ class ProductManager implements Manageable<Product> {
     listProduct.removeWhere((product) => product.productID == productID);
   }
 
+  //Create a function updateProduct() to update product from list by ID.
   @override
   void update(String id) {
     id = Check.checkIdDuplicateProduct(

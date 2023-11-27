@@ -24,21 +24,14 @@ class User {
       password: json['password'] as String,
     );
   }
-  Map<String, dynamic> toJson() {
-    return {
-      'userID': userID,
-      'name': name,
-      'email': email,
-      'address': address,
-      'password': password,
-    };
-  }
-
+  
+  //toString() method is used to return a string format of an object.
   @override
   String toString() {
     return 'UserModel{userID: $userID, name: $name, email: $email, address: $address, password: $password}';
   }
 
+  // inputInformation() method is used to input information `for user.
   void inputInformation() {
     userID = Validator.getString('Enter user ID: ');
     name = Validator.getString('Enter name: ');

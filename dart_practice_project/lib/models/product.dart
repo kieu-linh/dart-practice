@@ -45,7 +45,7 @@ class Product {
   //toString() method is used to return a string representation of an object.
   @override
   String toString() {
-    return 'ProductModel{productID: $productID, name: $name, description: $description, imageURL: $imageURL, price: ${(price).toVnd()}, rating: $rating,categoryName: $categoryName}';
+    return 'ProductModel{ productID: $productID, name: $name, description: $description, imageURL: $imageURL, price: ${(price).toVnd()}, rating: $rating,categoryName: $categoryName}';
   }
 
   //factory constructor (named constructor) convert json to object
@@ -87,6 +87,7 @@ class Product {
   }
 }
 
+//select category name by category id from list category
 String getNameCategory(String id) {
   for (Category category in categories) {
     if (category.categoryID == id) {

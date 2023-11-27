@@ -11,6 +11,8 @@ void main() async {
   ProductManager productManager = ProductManager();
   CategoryManager categoryManager = CategoryManager();
   Product product = Product();
+  
+  //handling exception error
   try {
     await productManager.getProductData();
   } catch (e) {

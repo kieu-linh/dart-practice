@@ -5,7 +5,7 @@ import 'package:dart_practice_project/utils/validator.dart';
 // Create class Check with static method checkID() and checkIDCategory().
 // checkID() will check if the id is exist in the list product or not.
 class Check {
-  //methob checkID() will check if the id is exist in the list product or not.
+  // checkID() will check if the id is exist in the list product or not.
   static String checkID(List<Product> products) {
     bool isValid;
     String id;
@@ -22,7 +22,7 @@ class Check {
     return id;
   }
 
-  //methob checkIDCategory() will check if the id is exist in the list category or not.
+  // checkIDCategory() will check if the id is exist in the list category or not.
   static String checkIDCategory(List<Category> categories) {
     bool isValid;
     String id;
@@ -38,6 +38,7 @@ class Check {
     return id;
   }
 
+  // checkIDCategory() will check if the id is exist in the list category or not.
   static String checkIdDuplicateProduct(List<Product> products, String prompt) {
     String id;
     bool checkId;
@@ -51,6 +52,7 @@ class Check {
     return id;
   }
 
+  // checkIDCategory() will check if the id is exist in the list category or not.
   static String checkIdDuplicateCategory(
       List<Category> categories, String prompt) {
     String id;
